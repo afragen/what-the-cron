@@ -2,8 +2,8 @@
 Contributors: gilbitron
 Tags: admin, cron, plugin, wp-cron
 Requires at least: 5.3
-Tested up to: 5.4
-Requires PHP: 7.0
+Tested up to: 6.2
+Requires PHP: 7.1
 Stable tag: 0.1.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -20,6 +20,10 @@ What The Cron adds a WordPress admin Tools page that displays WP-Cron specific c
 1. The What The Cron admin screen
 
 == Changelog ==
+
+= x.x.x =
+* update for PHP8+ compatibility
+* update tested to
 
 = 0.1.2 =
 * Update requires WP to 5.3
