@@ -21,6 +21,10 @@ What The Cron adds a WordPress admin Tools page that displays WP-Cron specific c
 
 == Changelog ==
 
+= x.x.x =
+* update for PHP8+ compatibility
+* update tested to
+
 = 0.1.2 =
 * Update requires WP to 5.3
 
