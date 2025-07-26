@@ -30,6 +30,8 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+add_filter('gu_override_dot_org', fn()=> ['what-the-cron/what-the-cron.php']);
+
 if (file_exists(__DIR__ . '/vendor/autoload.php')) {
     require_once __DIR__ . '/vendor/autoload.php';
 }
