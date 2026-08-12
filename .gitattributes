@@ -1,0 +1,7 @@
+.gitignore export-exclude
+.gitattributes export-ignore
+deploy.sh export-ignore
+composer.lock export-ignore
+README.md export-ignore
+.github export-ignore
+.disignore export-ignore
