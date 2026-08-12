@@ -2,7 +2,7 @@
 Contributors: gilbitron
 Tags: admin, cron, plugin, wp-cron
 Requires at least: 5.9
-Tested up to: 6.2
+Tested up to: 7.1
 Requires PHP: 8.1
 Stable tag: 0.1.2
 License: GPLv2 or later
@@ -24,6 +24,7 @@ What The Cron adds a WordPress admin Tools page that displays WP-Cron specific c
 = x.x.x =
 * update for PHP8+ compatibility
 * update tested to
+* update for mobile table row display on WP 7.1+
 
 = 0.1.2 =
 * Update requires WP to 5.3
