@@ -3,7 +3,7 @@
 Plugin Name:  What The Cron
 Description:  What is the deal with my cron?
 Author:       Gilbert Pellegrom
-Version:      0.1.2.1
+Version:      0.1.2.2
 Requires PHP: 8.1
 Requires WP:  5.9
 License:      GPLv2 or later
@@ -30,19 +30,31 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-add_filter('gu_override_dot_org', fn()=> ['what-the-cron/what-the-cron.php']);
+add_filter('gu_override_dot_org', fn() => ['what-the-cron/what-the-cron.php']);
 
 if (file_exists(__DIR__ . '/vendor/autoload.php')) {
     require_once __DIR__ . '/vendor/autoload.php';
 }
+
+// Add CSS for WP 7.1+ to fix the table layout on mobile.
+add_action(
+    'admin_enqueue_scripts',
+    function () {
+        global $wp_version;
+        if (version_compare($wp_version, '7.1-RC1', '>=')) {
+            $version = get_file_data(__FILE__, ['Version' => 'Version'])['Version'];
+            wp_enqueue_style('what-the-cron-post-7-1', plugins_url('css/post-7-1.css', __FILE__), [], $version, 'screen');
+        }
+    },
+    99
+);
 
 /**
  * The main SpinupWP function.
  *
  * @return \Gilbitron\WhatTheCron\Plugin
  */
-function WhatTheCron()
-{
+function WhatTheCron() {
     if (isset($GLOBALS['what_the_cron']) && $GLOBALS['what_the_cron'] instanceof \Gilbitron\WhatTheCron\Plugin) {
         return $GLOBALS['what_the_cron'];
     }
