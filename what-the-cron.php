@@ -3,7 +3,7 @@
 Plugin Name:  What The Cron
 Description:  What is the deal with my cron?
 Author:       Gilbert Pellegrom
-Version:      0.1.2.3
+Version:      0.1.2.4
 Requires PHP: 8.1
 Requires WP:  5.9
 License:      GPLv2 or later
@@ -40,8 +40,8 @@ if (file_exists(__DIR__ . '/vendor/autoload.php')) {
 add_action(
     'admin_enqueue_scripts',
     function () {
-        global $wp_version;
-        if (version_compare($wp_version, '7.1-RC1', '>=')) {
+        global $wp_version, $pagenow;
+        if (version_compare($wp_version, '7.1-RC1', '>=') && str_contains( $pagenow,'tools.php?page=what-the-cron' )) {
             $version = get_file_data(__FILE__, ['Version' => 'Version'])['Version'];
             wp_enqueue_style('what-the-cron-post-7-1', plugins_url('css/post-7-1.css', __FILE__), [], $version, 'screen');
         }
